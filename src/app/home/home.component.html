@@ -1,0 +1,100 @@
+<app-header></app-header>
+
+<div class="container mt-3">
+    <div class="row new text-secondary">
+        <div class="col-lg-5 d-flex flex-column justify-content-center ps-5">
+            <h3 class="text-info mb-3">{{ newhot.name }}</h3>
+            <p>{{ newhot.description }}</p>
+            <div class="d-flex gap-3 align-items-center mt-2">
+                <button class="btn w-50 btn-success">
+                    <a class="text-white w-100 h-100 d-block" routerLink="/product-details/{{newhot.id}}">
+                        Read More
+                    </a></button>
+                <button (click)="addCart(newhot)" class="w-100 btn btn-outline-warning fw-bold">
+                    ADD TO CART
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <img src="{{newhot.img}}" alt="">
+        </div>
+    </div>
+
+    <h3 class="text-danger fw-bold pt-5 pb-2">
+        <i class="fa fa-bolt fa-fw "></i>
+        FLASH SALE
+    </h3>
+    <div class="row row-cols-lg-4 mb-5">
+        <div class="col mb-4" *ngFor="let item of getSale()">
+            <a routerLink="/product-details/{{item.id}}">
+                <div class="card">
+                    <div class="card-body px-2 pt-2">
+                        <img src="{{item.img}}" alt="">
+
+                        <div class="d-flex gap-3 justify-content-center my-2">
+                            <del class="me-2 text-white">{{item.price | currency: 'VND'}}</del>
+                            <span class="text-center text-danger fw-bold">{{item.sale | currency: 'VND'}}</span>
+                        </div>
+                        <h5 class="text-center text-info">{{item.name}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade my-3" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div data-bs-interval="1000" class="carousel-item active">
+                <img src="assets/carousel/carousel1.png" class="d-block w-100 h-100 rounded-5" alt="...">
+            </div>
+            <div data-bs-interval="1000" class="carousel-item">
+                <img src="assets/carousel/carousel2.png" class="d-block w-100 h-100 rounded-5" alt="...">
+            </div>
+            <div data-bs-interval="1000" class="carousel-item">
+                <img src="assets/carousel/carousel3.png" class="d-block w-100 h-100 rounded-5" alt="...">
+            </div>
+            <div data-bs-interval="1000" class="carousel-item">
+                <img src="assets/carousel/carousel4.png" class="d-block w-100 h-100 rounded-5" alt="...">
+            </div>
+            <div data-bs-interval="1000" class="carousel-item">
+                <img src="assets/carousel/carousel5.png" class="d-block w-100 h-100 rounded-5" alt="...">
+            </div>
+            <div data-bs-interval="1000" class="carousel-item">
+                <img src="assets/carousel/carousel6.png" class="d-block w-100 h-100 rounded-5" alt="...">
+            </div>
+            <div data-bs-interval="1000" class="carousel-item">
+                <img src="assets/carousel/carousel7.png" class="d-block w-100 h-100 rounded-5" alt="...">
+            </div>
+            <div data-bs-interval="1000" class="carousel-item">
+                <img src="assets/carousel/carousel8.png" class="d-block w-100 h-100 rounded-5" alt="...">
+            </div>
+            <div data-bs-interval="1000" class="carousel-item">
+                <img src="assets/carousel/carousel9.png" class="d-block w-100 h-100 rounded-5" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <h3 class="text-white text-center fw-bold pt-5 pb-2">
+        Featured Products
+    </h3>
+    <div class="w-75 mx-auto pb-5">
+        <div class="row row-cols-lg-3">
+            <div class="col product-hot" *ngFor="let item of getPoductHot()">
+                <a routerLink="/product-details/{{item.id}}">
+                    <img src="{{item.img}}" class=" p-3 rounded-2">
+                    <i class="fa-regular fa-eye text-center my-2 d-block">
+                        <span class="px-2 text-white">{{item.view}}</span>
+                    </i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

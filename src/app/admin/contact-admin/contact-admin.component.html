@@ -1,0 +1,112 @@
+<div class="mt-3 ps-5 pe-3">
+    <div class="filter my-4 d-flex gap-3 align-items-center">
+        <input type="date" class="search" [(ngModel)]="date_start">
+        <i class="fa-solid fa-arrow-right text-white"></i>
+        <input type="date" class="search" [(ngModel)]="date_end">
+    </div>
+    <div class="product px-3 rounded-3">
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Create At</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of filterData()" class="text-center align-middle">
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.message}}</td>
+                    <td>{{item.create_at}}</td>
+                    <td class="ps-5">
+                        <div class="d-flex align-items-center gap-3">
+                            <button *ngIf="!item.reply" (click)="reply(item)" class="btn btn-outline-success"
+                                data-bs-toggle="modal" data-bs-target="#exampleModal">Reply</button>
+
+                            <div *ngIf="item.reply" class="d-flex align-items-center gap-3">
+                                <button (click)="reply(item)" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Reply</button>
+                                <button (click)="replyInfo(item)" class="btn p-0" data-bs-toggle="modal" data-bs-target="#info-reply">
+                                    <i class="fa-solid fa-circle-info fa-2xl text-primary"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Reply</h1>
+                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formReply">
+                        <div class="mb-2">
+                            <label class="mb-1" for="">Sender Name</label>
+                            <input class="w-100" formControlName="senderName" type="text">
+                        </div>
+                        <div class="mb-2">
+                            <label class="mb-1" for="">Reply To</label>
+                            <input class="w-100" formControlName="replyTo" type="text">
+                        </div>
+                        <div class="mb-2">
+                            <label class="mb-1" for="">To Email</label>
+                            <input class="w-100" formControlName="toEmail" type="text">
+                        </div>
+                        <div class="mb-2">
+                            <label class="mb-1" for="">Message</label>
+                            <textarea formControlName="message" class="w-100" placeholder="Message"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button (click)="send()" type="button" class="btn btn-outline-success">Send</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info-reply Modal -->
+    <div class="modal fade" id="info-reply" tabindex="-1" aria-labelledby="info-replyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="info-replyModalLabel">Reply Infor</h1>
+                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formInfoReply">
+                        <div class="mb-2">
+                            <label class="mb-1" for="">Sender Name</label>
+                            <input class="w-100" readonly formControlName="senderName" type="text">
+                        </div>
+                        <div class="mb-2">
+                            <label class="mb-1" for="">Message Reply</label>
+                            <textarea readonly formControlName="message_reply" class="w-100"
+                                placeholder="Message"></textarea>
+                        </div>
+                        <div class="mb-2">
+                            <label class="mb-1" for="">Reply At</label>
+                            <input readonly class="w-100" formControlName="reply_at" type="text">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

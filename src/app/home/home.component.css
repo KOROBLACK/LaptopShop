@@ -1,0 +1,45 @@
+.card{
+    background-color: #1C2438;
+}
+
+.card-footer{
+    border-top: 1px solid rgb(179, 147, 147);
+}
+
+img{
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    padding: 8px 8px 12px;
+    background-color: black;
+    border-radius: 4px;
+}
+
+.product-hot img{
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    background-color: #1C2438;
+    transition: 0.3s ease-in-out;
+}
+
+.product-hot a:hover img{
+    background-color: #1C2438;
+    scale: 1.1;
+    margin-bottom: 4px;
+}
+
+.product-hot a{
+    height: 100%;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+}
+
+.new img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

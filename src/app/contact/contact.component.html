@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<div class="container my-3">
+    <h1 class="text-center text-white fw-bold">Contact <span class="text-danger">US</span></h1>
+
+    <div class="row row-cols-lg-2 mt-5">
+        <div class="col info">
+            <div>
+                <h3 class="text-white fw-medium">Location:</h3>
+                <p class="text-secondary">
+                    <i class="me-2 fa-solid fa-location-dot text-danger"></i>
+                    12 Trịnh Đình Thảo, Hòa Thạnh, Tân Phú
+                </p>
+            </div>
+            <div>
+                <h3 class="text-white fw-medium">Email:</h3>
+                <p class="text-secondary">
+                    <i class="me-2 fa-solid fa-envelope text-success"></i>
+                    info@itc.edu.vn
+                </p>
+            </div>
+            <div>
+                <h3 class="text-white fw-medium">Hotline:</h3>
+                <p class="text-secondary">
+                    <i class="me-2 fa-solid fa-phone text-info"></i>
+                    (028) 397 349 83 - (028) 386 050 03
+                </p>
+            </div>
+        </div>
+        <div class="col ps-5">
+            <form [formGroup]="formContact">
+                <div>
+                    <label for="" class="mb-1 text-white">Name</label>
+                    <input type="text" formControlName="name" class="w-100 mb-2 w-100" placeholder="Name">
+                </div>
+                <div>
+                    <label for="" class="mb-1 text-white">Email</label>
+                    <input type="text" formControlName="email" class="w-100 mb-2 w-100" placeholder="Email">
+                </div>
+                <div>
+                    <label for="" class="mb-1 text-white">Message</label>
+                    <textarea class="w-100 mb-3 w-100" formControlName="message" placeholder="Message"></textarea>
+                </div>
+            </form>
+            <button class="btn btn-outline-success" (click)="send()">Submit</button>
+        </div>
+    </div>
+</div>

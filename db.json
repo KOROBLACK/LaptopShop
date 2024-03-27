@@ -1,0 +1,179 @@
+{
+  "product": [
+    {
+      "name": "Laptop Acer",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus culpa assumenda earum.Fugit, ipsa laboriosam. Ut quia sed quidem exercitationem tempore, laboriosam, voluptas, cupiditate dolorum nemo unde ullam? Maxime, assumenda?",
+      "price": 10000000,
+      "sale": 8000000,
+      "qty": 80,
+      "img": "assets/img/LaptopAcer.png",
+      "view": 0,
+      "checked": false,
+      "thumbnail": [
+        "assets/img/thumbnail1.png",
+        "assets/img/thumbnail2.png",
+        "assets/img/thumbnail3.png"
+      ],
+      "id": "0"
+    },
+    {
+      "id": "1",
+      "name": "Laptop Asus",
+      "qty": 60,
+      "price": 5000000,
+      "img": "assets/img/LaptopAsus.png",
+      "sale": 0,
+      "view": 600,
+      "checked": false,
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus culpa assumenda earum.Fugit, ipsa laboriosam. Ut quia sed quidem exercitationem tempore, laboriosam, voluptas, cupiditate dolorum nemo unde ullam? Maxime, assumenda?",
+      "thumbnail": [
+        "assets/img/thumbnail1.png",
+        "assets/img/thumbnail2.png",
+        "assets/img/thumbnail3.png"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Laptop HP",
+      "qty": 90,
+      "price": 20000000,
+      "img": "assets/img/LaptopHP.png",
+      "sale": 15000000,
+      "view": 380,
+      "checked": false,
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus culpa assumenda earum.Fugit, ipsa laboriosam. Ut quia sed quidem exercitationem tempore, laboriosam, voluptas, cupiditate dolorum nemo unde ullam? Maxime, assumenda?",
+      "thumbnail": [
+        "assets/img/thumbnail1.png",
+        "assets/img/thumbnail2.png",
+        "assets/img/thumbnail3.png"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Laptop Lenovo",
+      "qty": 80,
+      "price": 8000000,
+      "img": "assets/img/LaptopLenovo.png",
+      "sale": 0,
+      "view": 920,
+      "checked": false,
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus culpa assumenda earum.Fugit, ipsa laboriosam. Ut quia sed quidem exercitationem tempore, laboriosam, voluptas, cupiditate dolorum nemo unde ullam? Maxime, assumenda?",
+      "thumbnail": [
+        "assets/img/thumbnail1.png",
+        "assets/img/thumbnail2.png",
+        "assets/img/thumbnail3.png"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Laptop MSI",
+      "qty": 50,
+      "price": 15000000,
+      "img": "assets/img/LaptopMSI.png",
+      "sale": 8000000,
+      "view": 742,
+      "checked": false,
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus culpa assumenda earum.Fugit, ipsa laboriosam. Ut quia sed quidem exercitationem tempore, laboriosam, voluptas, cupiditate dolorum nemo unde ullam? Maxime, assumenda?",
+      "thumbnail": [
+        "assets/img/thumbnail1.png",
+        "assets/img/thumbnail2.png",
+        "assets/img/thumbnail3.png"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Mac Air",
+      "qty": 100,
+      "price": 15000000,
+      "img": "assets/img/MacAir.png",
+      "sale": 14000000,
+      "view": 685,
+      "checked": false,
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus culpa assumenda earum.Fugit, ipsa laboriosam. Ut quia sed quidem exercitationem tempore, laboriosam, voluptas, cupiditate dolorum nemo unde ullam? Maxime, assumenda?",
+      "thumbnail": [
+        "assets/img/thumbnail1.png",
+        "assets/img/thumbnail2.png",
+        "assets/img/thumbnail3.png"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Laptop Acer Nitro Gaming AN515-57-5669 i5 11400H",
+      "qty": 17,
+      "price": 17000000,
+      "img": "assets/img/new.png",
+      "sale": 16500000,
+      "view": 1043,
+      "checked": false,
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus culpa assumenda earum.Fugit, ipsa laboriosam. Ut quia sed quidem exercitationem tempore, laboriosam, voluptas, cupiditate dolorum nemo unde ullam? Maxime, assumenda?",
+      "thumbnail": [
+        "assets/img/thumbnail1.png",
+        "assets/img/thumbnail2.png",
+        "assets/img/thumbnail3.png"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Laptop Lenovo Ideapa",
+      "qty": 58,
+      "price": 23000000,
+      "img": "assets/img/Laptoplenovo-ideapa.png",
+      "sale": 0,
+      "view": 321,
+      "checked": false,
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus culpa assumenda earum.Fugit, ipsa laboriosam. Ut quia sed quidem exercitationem tempore, laboriosam, voluptas, cupiditate dolorum nemo unde ullam? Maxime, assumenda?",
+      "thumbnail": [
+        "assets/img/thumbnail1.png",
+        "assets/img/thumbnail2.png",
+        "assets/img/thumbnail3.png"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "c3d2",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "create_at": "9/3/2024 10:50:21",
+      "role": "admin"
+    },
+    {
+      "id": "bc07",
+      "username": "koro",
+      "email": "ngothuong879@gmail.com",
+      "password": "123456",
+      "create_at": "9/3/2024 10:55:51",
+      "role": "user"
+    },
+    {
+      "id": "5b6c",
+      "username": "text",
+      "email": "text@gmail.com",
+      "password": "123456",
+      "create_at": "12/3/2024 10:35:10",
+      "role": "user"
+    }
+  ],
+  "contact": [
+    {
+      "name": "Ngô Hoài Thương",
+      "email": "ngothuong879@gmail.com",
+      "message": "Hello Admin",
+      "create_at": "20/3/2024",
+      "reply": true,
+      "sender_reply": "Admin - KORO_GAMING",
+      "message_reply": "Hi Ngô Hoài Thương",
+      "reply_at": "20/3/2024",
+      "id": "e7d9"
+    },
+    {
+      "name": "Nguyễn Văn A",
+      "email": "siniwa4371@glaslack.com",
+      "message": "Hi Admin",
+      "create_at": "20/3/2024",
+      "reply": false,
+      "id": "c401"
+    }
+  ]
+}

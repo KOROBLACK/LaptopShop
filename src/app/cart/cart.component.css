@@ -1,0 +1,70 @@
+.cart{
+  height: calc(100vh - 80px);
+}
+
+.container{
+  background-color: #1C2438;
+}
+
+.scroll_table {
+    height: 350px;
+    overflow-y: scroll;
+    background-color: #151929;
+}
+
+.scroll_table::-webkit-scrollbar {
+  width: 8px; /* Điều chỉnh độ rộng thanh cuộn */
+}
+
+.scroll_table::-webkit-scrollbar-track {
+  background-color: transparent; /* Màu nền của thanh cuộn */
+}
+
+.scroll_table::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+  border-radius: 8px;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    color: #198754;
+    background-color: #151929;
+    z-index: 1;
+}
+
+th::after{
+    content: '';
+    background: rgb(179, 147, 147);
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+td{
+  background-color: #151929;
+}
+
+img{
+    width: 80px;
+    height: 60px;
+}
+
+input[type="checkbox"]{
+  height: 20px;
+  width: 20px;
+}
+
+
+.gt_checkout button:hover{
+  color: black;
+  background-color: #DC3545;
+  font-weight: 500;
+  transition: all 0.25s;
+}
+
+
+
+

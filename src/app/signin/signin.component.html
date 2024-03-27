@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="account">
+    <form [formGroup]="formSignin">
+        <h3 class="text-center text-white">Signin</h3>
+        <div>
+            <label for="" class="mb-1 mt-2 text-success">Email</label>
+            <input type="email" formControlName="email">
+
+            <div class="validate">
+                <span *ngIf="formSignin.get('email')?.errors?.['required']">
+                    Email is required
+                </span>
+                <span *ngIf="formSignin.get('email')?.errors?.['email']">
+                    Invalid email format
+                </span>
+            </div>
+        </div>
+        <div>
+            <label for="" class="mb-1 mt-2 text-success">Password</label>
+            <input type="password" formControlName="password">
+
+            <div class="validate">
+                <span *ngIf="formSignin.get('password')?.errors?.['required']">
+                    Password is required
+                </span>
+            </div>
+        </div>
+        <button type="button" (click)="signIn()" class="btn btn-outline-success w-100 mt-3 rounded-5">Signin</button>
+        <div class="text-center mt-2">
+            <a routerLink="/" class="text-danger text-decoration-none">Forget password?</a>
+            <a routerLink="/signup" class="text-white text-decoration-none">Signup here</a>
+        </div>
+    </form>
+</div>
+

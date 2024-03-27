@@ -1,0 +1,43 @@
+.card{
+    background-color: #1C2438;
+}
+
+.card-footer{
+    border-top: 1px solid rgb(179, 147, 147);
+}
+
+img{
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    padding: 8px 8px 12px;
+    background-color: black;
+    border-radius: 4px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.filter {
+    background-color: #1C2438;
+    padding: 4px 12px 12px;
+    color: white;
+    display: flex;
+    align-items: end;
+    gap: 12px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 0 5px rgb(0, 255, 60);
+}
+.container{
+    min-height: calc(100vh - 80px);
+}
+
+h5 {
+    height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 8px;
+  }

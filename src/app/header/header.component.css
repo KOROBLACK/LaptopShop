@@ -1,0 +1,38 @@
+span{
+    text-transform: uppercase;
+    color: blue;
+    font-weight: 500;
+}
+
+ul.dropdown-menu li:first-child a{
+    position: relative;
+}
+ul.dropdown-menu li a:hover{
+    background-color: black;
+}
+
+ul.dropdown-menu{
+    background-color: #1C2438;
+}
+
+ul.dropdown-menu li:first-child a::before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: #1C2438;
+    transform: rotate(45deg);
+    top: -15px;
+    left: 15px;
+    z-index: -1;
+}
+
+.nav-link{
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.active_link{
+    background: linear-gradient(to right, #cc208e 0%, #6713d2 100%);
+    color: white;
+}

@@ -1,0 +1,31 @@
+.row{
+    padding: 20px 20px;
+    background-color: #151929;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+}
+
+del, span{
+    font-size: 20px;
+}
+
+h1{
+    border-bottom: 2px solid rgb(179, 147, 147);
+}
+
+.thumbnail img{
+    height: 80px;
+    width: 120px;
+}
+

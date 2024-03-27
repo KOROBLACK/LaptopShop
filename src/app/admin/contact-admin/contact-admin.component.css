@@ -1,0 +1,66 @@
+.product {
+  background-color: #151929;
+  height: 380px;
+  overflow-y: scroll;
+}
+
+.product::-webkit-scrollbar {
+  width: 8px; /* Điều chỉnh độ rộng thanh cuộn */
+}
+
+.product::-webkit-scrollbar-track {
+  background-color: transparent; /* Màu nền của thanh cuộn */
+}
+
+.product::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+  border-radius: 8px;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  color: #198754;
+  background-color: #151929;
+  z-index: 1;
+}
+
+th::after {
+  content: "";
+  background: rgb(179, 147, 147);
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+td {
+  background-color: #151929;
+  color: #444db5;
+}
+
+input, textarea {
+  margin-bottom: 12px;
+  background-color: black;
+  padding: 8px;
+  border-radius: 8px;
+  border: 0;
+  outline: none;
+  color: #5b42f3;
+  margin-bottom: 0;
+}
+
+input:focus {
+  color: #5b42f3;
+  border: 1px solid rgb(255, 25, 0);
+}
+
+.modal-content{
+    background-color: #151929;
+    color: #ccc;
+}
+
+.search{
+    background-color: #151929;
+}

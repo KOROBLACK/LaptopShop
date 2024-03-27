@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="account">
+    <form [formGroup]="formSignup">
+        <h3 class="text-center text-white">Signup</h3>
+        <div>
+            <label for="" class="mb-1 mt-2 text-success">User name</label>
+            <input type="text" formControlName="username">
+
+            <div class="validate">
+                <span *ngIf="formSignup.get('username')?.errors?.['required']">
+                    Username is required
+                </span>
+            </div>
+        </div>
+        <div>
+            <label for="" class="mb-1 mt-2 text-success">Email</label>
+            <input type="email" formControlName="email">
+
+            <div class="validate">
+                <span *ngIf="formSignup.get('email')?.errors?.['required']">
+                    Email is required
+                </span>
+                <span *ngIf="formSignup.get('email')?.errors?.['email']">
+                    Invalid email format
+                </span>
+            </div>
+        </div>
+        <div>
+            <label for="" class="mb-1 mt-2 text-success">Password</label>
+            <input type="password" formControlName="password">
+
+            <div class="validate">
+                <span *ngIf="formSignup.get('password')?.errors?.['required']">
+                    Password is required
+                </span>
+            </div>
+        </div>
+        <button type="submit" (click)="signUp()" class="btn btn-outline-success w-100 mt-3 rounded-5">Signup</button>
+        <div class="mt-2 text-center">
+            <a routerLink="/signin" class="text-white text-decoration-none">Signin here</a>
+        </div>
+    </form>
+</div>
+
+
+

@@ -1,0 +1,37 @@
+.account{
+    background: linear-gradient(to right, #cc208e 0%, #6713d2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+
+form{
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px 2px white;
+    background-color: #1C2438;
+}
+
+
+form input{
+    width: 100%;
+    padding: 4px 16px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    background-color: #151929;
+    color: #5B42F3;
+}
+
+
+form input:focus{
+    color: #5B42F3;
+    border: 1px solid rgb(255, 25, 0);
+}
+
+.validate span{
+    font-size: 10px;
+    display: inline-block;
+    color: red;
+  }

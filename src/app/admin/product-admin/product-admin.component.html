@@ -1,0 +1,96 @@
+<div class="mt-3">
+    <h3 class="text-white mb-3">PRODUCT MANEGER</h3>
+    <!-- Button trigger modal -->
+    <div class="mb-4 mt-2 d-flex justify-content-between">
+        <input type="text" [(ngModel)]="search" class="search" placeholder="search">
+        <button (click)="check = 'add'" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add new product
+        </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 *ngIf="check == 'add'" class="modal-title fs-5 text-white" id="exampleModalLabel">Add product</h1>
+                    <h1 *ngIf="check == 'update'" class="modal-title fs-5 text-white" id="exampleModalLabel">Update product</h1>
+                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formProduct">
+                        <div class="mb-2">
+                            <label class="mb-1" for="">Image</label>
+                            <input type="file" class="w-100" (change)="changeFile($event)">
+                            <input class="w-100" formControlName="img" type="hidden">
+                        </div>
+                        <div class="mb-2">
+                            <label class="mb-1" for="">Name</label>
+                            <input class="w-100" formControlName="name" type="text">
+                        </div>
+                        <div class="mb-2">
+                            <label class="mb-1" for="">Description</label>
+                            <input class="w-100" formControlName="description" type="text">
+                        </div >
+                        <div class="row row-cols-lg-2">
+                            <div class="mb-2 col">
+                                <label class="mb-1" for="">Price</label>
+                                <input class="w-100" formControlName="price" type="number">
+                            </div>
+                            <div class="mb-2 col">
+                                <label class="mb-1" for="">Sale</label>
+                                <input class="w-100" formControlName="sale" type="number">
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="mb-1" for="">Quantity</label>
+                            <input class="w-100" formControlName="qty" type="number">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button (click)="add()" *ngIf="check == 'add'" type="button" class="btn btn-primary">Save</button>
+                    <button (click)="update()" *ngIf="check == 'update'" type="button" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product px-2 rounded-3">
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Sale</th>
+                    <th>Quantity</th>
+                    <th>View</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of filterData()" class="text-center align-middle">
+                    <td><img src="{{item.img}}" alt=""></td>
+                    <td class="text-info">{{item.name}}</td>
+                    <td class="text-start">{{item.description}}</td>
+                    <td>{{item.price | currency: 'VND'}}</td>
+                    <td [ngClass]="{'text-danger' : item.sale > 0, 'fw-bold' : item.sale > 0}">{{item.sale | currency: 'VND'}}</td>
+                    <td>{{item.qty}}</td>
+                    <td>{{item.view}}</td>
+                    <td>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button (click)="edit(item)" type="button" class="btn px-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="fa-solid fa-pen-to-square text-info"></i>
+                            </button>
+                            <button (click)="delete(item)" class="btn px-1">
+                                <i class="fa-solid fa-trash text-danger"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

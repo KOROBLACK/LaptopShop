@@ -1,0 +1,43 @@
+<div class="dashboard mt-3">
+    <h3 class="text-white mb-3">OVERVIEW</h3>
+    <div class="row row-cols-lg-4 m-0">
+        <div class="col">
+            <div class="box h-100 rounded-3 d-flex flex-column gap-2 justify-content-center align-items-center">
+                <div class="d-flex gap-3 justify-content-center align-items-center">
+                    <i class="fa-solid fa-money-check-dollar fa-2xl text-secondary"></i>
+                    <span class="fs-3 fw-medium text-success">Balace</span>
+                </div>
+                <span style="color: #ff00a2;" class="fs-4 fw-bold">{{ balance | currency:'VND'}}</span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="box h-100 rounded-3 d-flex flex-column gap-2 justify-content-center align-items-center">
+                <div class="d-flex gap-3 justify-content-center align-items-center">
+                    <i class="fa-solid fa-user fa-2xl text-secondary"></i>
+                    <span class="fs-3 fw-medium text-success">User</span>
+                </div>
+                <span style="color: #444db5;" class="fs-4 fw-bold">5134</span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="box h-100 rounded-3 d-flex flex-column gap-2 justify-content-center align-items-center">
+                <div class="d-flex gap-3 justify-content-center align-items-center">
+                    <i class="fa-solid fa-folder-closed fa-2xl text-secondary"></i>
+                    <span class="fs-3 fw-medium text-success">Order</span>
+                </div>
+                <span style="color: #444db5;" class="fs-4 fw-bold">13134</span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="box h-100 rounded-3 d-flex flex-column gap-2 justify-content-center align-items-center">
+                <div class="d-flex gap-3 justify-content-center align-items-center">
+                    <i class="fa-solid fa-ticket fa-2xl text-secondary"></i>
+                    <span class="fs-3 fw-medium text-success">Coupon</span>
+                </div>
+                <span style="color: #444db5;" class="fs-4 fw-bold">51</span>
+            </div>
+        </div>
+    </div>
+
+    <img src="assets/chart.png" class="w-100 mt-4" alt="">
+</div>

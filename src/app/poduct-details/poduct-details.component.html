@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="bg-black">
+    <div class="container">
+        <div class="row row-cols-lg-2 w-75 d-flex mx-auto">
+            <div class="col d-flex flex-column gap-3">
+                <div class="d-flex flex-column gap-3">
+                    <h1 class="text-info pb-2">{{ product_details.name }}</h1>
+                    <div *ngIf="product_details.sale != 0" class="d-flex gap-4">
+                        <del class="me-2 text-white">{{
+                            product_details.price | currency : "VND"
+                            }}</del>
+                        <span class="text-danger fw-bold">{{
+                            product_details.sale | currency : "VND"
+                            }}</span>
+                    </div>
+                    <span *ngIf="product_details.sale == 0" class="text-danger fw-bold d-block">{{ product_details.price
+                        | currency : "VND" }}</span>
+                    <p class="text-white fst-italic">
+                        {{ product_details.description }}
+                    </p>
+                    <div class="d-flex gap-2">
+                        <label for="" class="text-success fw-medium">Quantity</label>
+                        <input type="number" (change)="check_qty(product_details)" [(ngModel)]="qty" min="1"
+                            max="{{ product_details.qty }}" />
+                    </div>
+                </div>
+
+                <button (click)="addCart(product_details)" class="w-100 btn btn-outline-warning fw-bold mx-auto d-block w-50 mt-2">
+                    ADD TO CART
+                </button>
+            </div>
+            <div class="col d-flex flex-column gap-3">
+                <img class="rounded-2 px-2" src="{{ product_details.img }}" alt="" />
+                <div class="d-flex gap-3 thumbnail">
+                    <img *ngFor="let item of product_details.thumbnail " src="{{item}}" class="bg-black px-2 py-1 rounded-2">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

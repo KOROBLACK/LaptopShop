@@ -1,0 +1,75 @@
+<app-header></app-header>
+<div class="cart">
+  <div class="container py-3 my-3 rounded-3">
+    <div class="scroll_table">
+      <table class="table">
+        <thead>
+          <tr class="text-center">
+            <th></th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Qty</th>
+            <th>Pice</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let item of cart; let index = index"
+            class="text-center align-middle"
+          >
+            <td>
+              <input
+                class="form-check-input"
+                [value]="item.id"
+                [checked]="item.checked"
+                (change)="checked($event, item)"
+                type="checkbox"
+              />
+            </td>
+            <td><img src="{{ item.img }}" /></td>
+            <td class="text-primary fw-bold">{{ item.name }}</td>
+            <td>
+              <input
+                [(ngModel)]="item.qty"
+                (change)="update_cart(item)"
+                style="width: 50px"
+                type="number"
+                min="1"
+                [max]="item.inventory"
+              />
+            </td>
+            <td *ngIf="item.sale == 0" class="text-light">
+              {{ item.price | currency : "VND" }}
+            </td>
+            <td *ngIf="item.sale !== 0" class="text-danger fw-medium">
+              {{ item.sale | currency : "VND" }}
+            </td>
+            <td class="fw-bold text-light">
+              {{ item.total | currency : "VND" }}
+            </td>
+            <td>
+              <button (click)="delete_cart(item, index)"  class="bg-transparent border border-0">
+                <i
+                  class="fa-solid fa-x fa-flip-horizontal fa-lg text-danger"
+                ></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-2 gt_checkout">
+      <h4 class="pe-2 m-0 my-3 text-light">
+        Subtotal:
+        <span class="text-danger">{{ total | currency : "VND" }}</span>
+      </h4>
+      <a class="text-decoration-none text-white" (click)="goToCheckout()">
+        <button type="button" class="btn btn-outline-danger w-100">
+          Proceed to Checkout
+        </button>
+      </a>
+    </div>
+  </div>
+</div>

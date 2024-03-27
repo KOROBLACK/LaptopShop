@@ -1,0 +1,96 @@
+<div class="admin">
+    <div class="sidebar">
+        <div class="text-center my-3">
+            <a class="navbar-brand">
+                <img src="../assets/logo.png" style="width: 170px; height: 70px" alt="" />
+            </a>
+        </div>
+        <div class="text-center ">
+            <img src="../assets/admin.png" style="width: 100px; height: 100px; border-radius: 50%;" alt="">
+            <span class="text-white d-block my-2 fs-2">ADMIN</span>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark p-0 ps-4">
+            <div class="container p-0">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarScroll">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" [ngClass]="{'active_link': link == 'dashboard'}" (click)="link = 'dashboard'">
+                                <i class="fa-solid fa-house"></i>
+                                <span class="fw-medium px-3 text-uppercase">dashboard</span>
+                            </a>
+                        </li>
+                        <li class="text-success mt-3">
+                            Data
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [ngClass]="{'active_link': link == 'product'}" (click)="link = 'product'">
+                                <i class="fa-brands fa-product-hunt"></i>
+                                <span class="fw-medium px-3">Product</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [ngClass]="{'active_link': link == 'user'}" (click)="link = 'user'">
+                                <i class="fa-solid fa-user"></i>
+                                <span class="fw-medium px-3">User</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="fa-solid fa-chart-simple"></i>
+                                <span class="fw-medium px-3">Chart</span>
+                            </a>
+                        </li>
+                        <li class="text-success mt-3">
+                            Notification
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [ngClass]="{'active_link': link == 'contact'}" (click)="link = 'contact'">
+                                <i class="fa-solid fa-file-signature"></i>
+                                <span class="fw-medium px-3">Contact infomation</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="content">
+        <nav class="navbar navbar-expand-lg bg-black navbar-dark p-0"
+            style="border-bottom: 1px solid rgb(179, 147, 147)">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link">Hi, <span class="text-white ms-2 fw-bold">ADMIN</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="fa-solid fa-gear"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a (click)="logout()" class="nav-link">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="px-3">
+            <app-dashboard *ngIf="link == 'dashboard'"></app-dashboard>
+            <app-product-admin *ngIf="link == 'product'"></app-product-admin>
+            <app-user *ngIf="link == 'user'"></app-user>
+            <app-contact-admin *ngIf="link == 'contact'"></app-contact-admin>
+        </div>
+    </div>
+</div>

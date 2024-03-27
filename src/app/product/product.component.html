@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="container mt-3">
+    <div class="d-flex justify-content-end align-items-center my-5 gap-3">
+        <div class="filter">
+            <label for="" class="fw-bold">Min</label>
+            <div class="d-flex flex-column align-items-center">
+                <span class="text-danger fw-bold">{{ min | currency: 'VND' }}</span>
+                <input type="range" [(ngModel)]="min" [min]="min_range" [max]="max_range" step="1">
+            </div>
+        </div>
+        <div class="filter">
+            <label for="" class="fw-bold">Max</label>
+            <div class="d-flex flex-column align-items-center">
+                <span class="text-danger fw-bold">{{ max | currency: 'VND' }}</span>
+                <input type="range" [(ngModel)]="max" [min]="min_range" [max]="max_range" step="1">
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-lg-4">
+        <div class="col mb-4" *ngFor="let item of productFilter()">
+            <a routerLink="/product-details/{{item.id}}">
+                <div class="card">
+                    <div class="card-body px-2 pt-2">
+                        <img src="{{item.img}}" alt="">
+
+                        <div *ngIf="item.sale != 0" class="d-flex gap-3 justify-content-center my-2">
+                            <del class="me-2 text-white">{{item.price | currency: 'VND'}}</del>
+                            <span class="text-center text-danger fw-bold">{{item.sale | currency: 'VND'}}</span>
+                        </div>
+                        <span *ngIf="item.sale == 0" class="text-danger fw-bold text-center d-block my-2">{{ item.price
+                            | currency : "VND" }}</span>
+                        <h5 class="text-center text-info">{{item.name}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
