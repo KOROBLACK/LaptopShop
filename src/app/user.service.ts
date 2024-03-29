@@ -27,7 +27,7 @@ export class UserService {
     return this.http.post<any>(this.URL, {...User, role: "user"})
   }
 
-  private URL = 'http://localhost:3000/users'
+  private URL = 'https://2c65fm-8080.csb.app/users'
   constructor(private http: HttpClient) {
     this.getUsers().subscribe(data =>{
       this.users = data

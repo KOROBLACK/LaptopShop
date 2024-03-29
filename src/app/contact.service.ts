@@ -20,7 +20,7 @@ export class ContactService {
     return this.http.put<any>(`${this.URL}/${id}`, contact)
   }
   
-  private URL = 'http://localhost:3000/contact'
+  private URL = 'https://2c65fm-8080.csb.app/contact'
 
   constructor(private http: HttpClient) {}
 }
